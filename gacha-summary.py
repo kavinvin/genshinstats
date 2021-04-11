@@ -1,6 +1,12 @@
 import pickle
 from funcy import curry
 
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument('filename')
+args = parser.parse_args()
+
 @curry
 def groupby(f, xs):
     d = {}
@@ -12,7 +18,7 @@ def groupby(f, xs):
             d[y] = [x]
     return d
 
-with open('gacha.pickle', 'rb') as f:
+with open(args.filename, 'rb') as f:
     data = pickle.load(f)
 
 gacha_types = groupby(lambda x: x['gacha_type']['name'])(data)
