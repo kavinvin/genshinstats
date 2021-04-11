@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import genshinstats as gs
 import pickle
 import argparse
@@ -9,5 +10,7 @@ args = parser.parse_args()
 authkey = gs.url_to_authkey(args.url)
 data = gs.get_entire_gacha_log(authkey=authkey)
 
-with open('gacha-history.pickle', 'wb') as f:
+filename = 'gacha-history.pickle'
+with open(filename, 'wb') as f:
     pickle.dump(tuple(data), f)
+    print(f'Saved to: {filename}')

@@ -2,3 +2,4 @@ __pycache__
 test*
 endpoints
 commit.sh
+*.pickle
