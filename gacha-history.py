@@ -1,4 +1,8 @@
 #!/usr/bin/env python
+"""
+A script to download Genshin Impact gacha history using url with authkey
+"""
+
 import genshinstats as gs
 import pickle
 import argparse
